@@ -1,0 +1,14 @@
+1.创建Project
+    mysite
+        mysite_diango
+            - settings.py   #配置文件
+            - url.py    #路由系统
+            - wsgi.py   #WSGI
+        manage.py   #django程序启动文件
+
+2.创建APP
+    cd mysite
+    python manage.startupapp cmdb   #cmdb为app名称
+    监控
+    CMDB
+    。。。
