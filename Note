@@ -8,7 +8,7 @@
 
 2.创建APP
     cd mysite
-    python manage.startupapp cmdb   #cmdb为app名称
+    python manage.py startupapp cmdb   #cmdb为app名称
     监控
     CMDB
     。。。
@@ -34,3 +34,43 @@
 
     statics目录放置静态文件
     <script src="/static/jquery-2.0.3.js"></script>
+
+7.连接数据库，操作数据库
+    ORM
+    Setting。py
+
+    class UserInfo(models.Model):
+        user = models.CharField(max_length=32)
+        email = models.CharField(max_length=32)
+
+    setting里面注册app
+
+    执行命令
+        python manage.py makemigrations
+        python manage.py migrate
+        =====>数据库表创建完成
+8.操作数据库
+    创建
+        models.UserInfo.objects.create(user=u,email=e)
+    获取
+        data_list = models.UserInfo.objects.all()
+
+
+
+
+
+
+
+
+
+
+注册：
+    检测：是否已经存在
+        m = models.UserInfo.objects.filter(user="alex",).count()
+        #获取用户名等于alex的数据个数
+
+
+登录：
+    检测：是否已经存在
+        m = models.UserInfo.objects.filter(user="alex",).count()
+    成功后：跳转
